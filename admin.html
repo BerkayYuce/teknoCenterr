@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Paneli</title>
+
+    <link rel="icon" href="images/logoicon.ico" type="image/png" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            height: 100vh;
+            width: 250px;
+            background-color: #4f4aa6;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding-top: 20px;
+        }
+
+
+
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+
+        .sidebar a:hover {
+            background-color: #4f4aa6;
+        }
+
+        .main-content {
+            margin-left: 260px;
+            padding: 20px;
+        }
+
+        .navbar {
+            margin-left: 250px;
+        }
+
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+        }
+
+        .footer .container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .footer .container .social_icon li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .footer .container .social_icon li a {
+            color: white;
+            font-size: 18px;
+        }
+
+        .footer .copyright p {
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .table th,
+        .table td {
+            text-align: center;
+        }
+
+
+        .table tbody tr:hover {
+            background-color: #f0f8ff;
+
+            cursor: pointer;
+
+            transition: background-color 0.3s ease;
+        }
+
+        .list-group-item:hover {
+            background-color: #e0f7fa;
+
+            color: #00796b;
+
+            font-weight: bold;
+
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-success:hover {
+            background-color: #28a745;
+
+            border-color: #1e7e34;
+
+            transform: scale(1.05);
+
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+
+        .list-group-item:nth-child(odd):hover {
+            background-color: #f9fbe7;
+
+        }
+
+        .list-group-item:nth-child(even):hover {
+            background-color: #e8f5e9;
+
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="sidebar">
+        <h3 class="text-center">Admin Paneli</h3>
+        <a href="#panel"><i class="fas fa-tachometer-alt"></i> Gösterge Paneli</a>
+        <a href="#urunler"><i class="fas fa-box"></i> Ürünler</a>
+        <a href="#kategoriler"><i class="fas fa-list"></i> Kategoriler</a>
+        <a href="#yorumlar"><i class="fas fa-comments"></i> Yorumlar</a>
+        <a href="#mesajlar"><i class="fas fa-envelope"></i> Mesajlar</a>
+        <a href="#duyurular"><i class="fas fa-bullhorn"></i>Duyurular</a>
+        <a href="#ayarlar"><i class="fas fa-cogs"></i> Ayarlar</a>
+        <a href="index.html"><i class="fas fa-sign-out-alt"></i> Çıkış Yap</a>
+    </div>
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Admin Paneli</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+        </div>
+    </nav>
+
+
+    <div class="main-content">
+
+
+
+        <div class="container my-5">
+            <h2 class="text-center mb-4">Ürün Yönetimi</h2>
+            <table class="table table-bordered table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Ürün Resmi</th>
+                        <th>Ürün Adı</th>
+
+                        <th>Stok</th>
+                        <th>Kategori</th>
+                        <th>İşlemler</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Ürün 1: Klavye -->
+                    <tr>
+                        <td class="text-center">
+                            <img src="images/product1.png" alt="Klavye" style="width: 100px; height: auto;" />
+                        </td>
+                        <td>Klavye</td>
+
+                        <td>25</td>
+                        <td>Bilgisayar Aksesuarları</td>
+                        <td>
+                            <button class="btn btn-success btn-sm"
+                                onclick="toggleExampleProducts('example1')">Düzenle</button>
+                        </td>
+                    </tr>
+                    <tr id="example1" style="display:none;">
+                        <td colspan="6">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Örnek Ürün</th>
+                                        <th>İşlem</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Örnek Ürün 1</td>
+                                        <td>
+                                            <button class="btn btn-success btn-sm">Düzenle</button>
+                                            <button class="btn btn-danger btn-sm">Kaldır</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Örnek Ürün 2</td>
+                                        <td>
+                                            <button class="btn btn-success btn-sm">Düzenle</button>
+                                            <button class="btn btn-danger btn-sm">Kaldır</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Ürün 2: Fare -->
+                    <tr>
+                        <td class="text-center">
+                            <img src="images/product2.png" alt="Fare" style="width: 100px; height: auto;" />
+                        </td>
+                        <td>Fare</td>
+
+                        <td>50</td>
+                        <td>Bilgisayar Aksesuarları</td>
+                        <td>
+                            <button class="btn btn-success btn-sm"
+                                onclick="toggleExampleProducts('example2')">Düzenle</button>
+                        </td>
+                    </tr>
+                    <tr id="example2" style="display:none;">
+                        <td colspan="6">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Örnek Ürün</th>
+                                        <th>İşlem</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Örnek Ürün 1</td>
+                                        <td>
+                                            <button class="btn btn-success btn-sm">Düzenle</button>
+                                            <button class="btn btn-danger btn-sm">Kaldır</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Örnek Ürün 2</td>
+                                        <td>
+                                            <button class="btn btn-success btn-sm">Düzenle</button>
+                                            <button class="btn btn-danger btn-sm">Kaldır</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Ürün 3: Mikrofon -->
+                    <tr>
+                        <td class="text-center">
+                            <img src="images/product3.png" alt="Mikrofon" style="width: 100px; height: auto;" />
+                        </td>
+                        <td>Mikrofon</td>
+
+                        <td>15</td>
+                        <td>Bilgisayar Aksesuarları</td>
+                        <td>
+                            <button class="btn btn-success btn-sm"
+                                onclick="toggleExampleProducts('example3')">Düzenle</button>
+                        </td>
+                    </tr>
+                    <tr id="example3" style="display:none;">
+                        <td colspan="6">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Örnek Ürün</th>
+                                        <th>İşlem</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Örnek Ürün 1</td>
+                                        <td>
+                                            <button class="btn btn-success btn-sm">Düzenle</button>
+                                            <button class="btn btn-danger btn-sm">Kaldır</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Örnek Ürün 2</td>
+                                        <td>
+                                            <button class="btn btn-success btn-sm">Düzenle</button>
+                                            <button class="btn btn-danger btn-sm">Kaldır</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Ürün 4: Hoparlörler -->
+                    <tr>
+                        <td class="text-center">
+                            <img src="images/product4.png" alt="Hoparlörler" style="width: 100px; height: auto;" />
+                        </td>
+                        <td>Hoparlörler</td>
+
+                        <td>20</td>
+                        <td>Bilgisayar Aksesuarları</td>
+                        <td>
+                            <button class="btn btn-success btn-sm"
+                                onclick="toggleExampleProducts('example4')">Düzenle</button>
+                        </td>
+                    </tr>
+                    <tr id="example4" style="display:none;">
+                        <td colspan="6">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Örnek Ürün</th>
+                                        <th>İşlem</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Örnek Ürün 1</td>
+                                        <td>
+                                            <button class="btn btn-success btn-sm">Düzenle</button>
+                                            <button class="btn btn-danger btn-sm">Kaldır</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Örnek Ürün 2</td>
+                                        <td>
+                                            <button class="btn btn-success btn-sm">Düzenle</button>
+                                            <button class="btn btn-danger btn-sm">Kaldır</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Ürün 5: Modem -->
+                    <tr>
+                        <td class="text-center">
+                            <img src="images/product5.png" alt="Modem" style="width: 100px; height: auto;" />
+                        </td>
+                        <td>Modem</td>
+
+                        <td>10</td>
+                        <td>İnternet Aksesuarları</td>
+                        <td>
+                            <button class="btn btn-success btn-sm"
+                                onclick="toggleExampleProducts('example5')">Düzenle</button>
+                        </td>
+                    </tr>
+                    <tr id="example5" style="display:none;">
+                        <td colspan="6">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Örnek Ürün</th>
+                                        <th>İşlem</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Örnek Ürün 1</td>
+                                        <td>
+                                            <button class="btn btn-success btn-sm">Düzenle</button>
+                                            <button class="btn btn-danger btn-sm">Kaldır</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Örnek Ürün 2</td>
+                                        <td>
+                                            <button class="btn btn-success btn-sm">Düzenle</button>
+                                            <button class="btn btn-danger btn-sm">Kaldır</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- Ürün 6: Harddisk -->
+                    <tr>
+                        <td class="text-center">
+                            <img src="images/product6.png" alt="Klavye" style="width: 100px; height: auto;" />
+                        </td>
+                        <td>Harddisk</td>
+
+                        <td>25</td>
+                        <td>Bilgisayar Donanımı</td>
+                        <td>
+                            <button class="btn btn-success btn-sm"
+                                onclick="toggleExampleProducts('example1')">Düzenle</button>
+                        </td>
+                    </tr>
+                    <tr id="example1" style="display:none;">
+                        <td colspan="6">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Örnek Ürün</th>
+                                        <th>İşlem</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Örnek Ürün 1</td>
+                                        <td>
+                                            <button class="btn btn-success btn-sm">Düzenle</button>
+                                            <button class="btn btn-danger btn-sm">Kaldır</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Örnek Ürün 2</td>
+                                        <td>
+                                            <button class="btn btn-success btn-sm">Düzenle</button>
+                                            <button class="btn btn-danger btn-sm">Kaldır</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- Ürün 7: Ramler -->
+                    <tr>
+                        <td class="text-center">
+                            <img src="images/product7.png" alt="Ramler" style="width: 100px; height: auto;" />
+                        </td>
+                        <td>Ramler</td>
+
+                        <td>55</td>
+                        <td>Bilgisayar Donanımı</td>
+                        <td>
+                            <button class="btn btn-success btn-sm"
+                                onclick="toggleExampleProducts('example1')">Düzenle</button>
+                        </td>
+                    </tr>
+                    <tr id="example1" style="display:none;">
+                        <td colspan="6">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Örnek Ürün</th>
+                                        <th>İşlem</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Örnek Ürün 1</td>
+                                        <td>
+                                            <button class="btn btn-success btn-sm">Düzenle</button>
+                                            <button class="btn btn-danger btn-sm">Kaldır</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Örnek Ürün 2</td>
+                                        <td>
+                                            <button class="btn btn-success btn-sm">Düzenle</button>
+                                            <button class="btn btn-danger btn-sm">Kaldır</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- Ürün 8: Klavye -->
+                    <tr>
+                        <td class="text-center">
+                            <img src="images/product8.png" alt="Oyuncu Koltuğu" style="width: 100px; height: auto;" />
+                        </td>
+                        <td>Oyuncu Koltuğu</td>
+
+                        <td>30</td>
+                        <td>Oyuncu Koltuğu</td>
+                        <td>
+                            <button class="btn btn-success btn-sm"
+                                onclick="toggleExampleProducts('example1')">Düzenle</button>
+                        </td>
+                    </tr>
+                    <tr id="example1" style="display:none;">
+                        <td colspan="6">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Örnek Ürün</th>
+                                        <th>İşlem</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Örnek Ürün 1</td>
+                                        <td>
+                                            <button class="btn btn-success btn-sm">Düzenle</button>
+                                            <button class="btn btn-danger btn-sm">Kaldır</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Örnek Ürün 2</td>
+                                        <td>
+                                            <button class="btn btn-success btn-sm">Düzenle</button>
+                                            <button class="btn btn-danger btn-sm">Kaldır</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+
+
+                    <!-- Ürün 11: Kasa -->
+                    <tr>
+                        <td class="text-center">
+                            <img src="images/product11.png" alt="Kasa" style="width: 100px; height: auto;" />
+                        </td>
+                        <td>Kasa</td>
+
+                        <td>25</td>
+                        <td>Kasa</td>
+                        <td>
+                            <button class="btn btn-success btn-sm"
+                                onclick="toggleExampleProducts('example1')">Düzenle</button>
+                        </td>
+                    </tr>
+                    <tr id="example1" style="display:none;">
+                        <td colspan="6">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Örnek Ürün</th>
+                                        <th>İşlem</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Örnek Ürün 1</td>
+                                        <td>
+                                            <button class="btn btn-success btn-sm">Düzenle</button>
+                                            <button class="btn btn-danger btn-sm">Kaldır</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Örnek Ürün 2</td>
+                                        <td>
+                                            <button class="btn btn-success btn-sm">Düzenle</button>
+                                            <button class="btn btn-danger btn-sm">Kaldır</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- Ürün 12: Kulaklık -->
+                    <tr>
+                        <td class="text-center">
+                            <img src="images/product12.png" alt="Tablet" style="width: 100px; height: auto;" />
+                        </td>
+                        <td>Kulaklık</td>
+
+                        <td>35</td>
+                        <td>Bilgisayar Aksesuarı</td>
+                        <td>
+                            <button class="btn btn-success btn-sm"
+                                onclick="toggleExampleProducts('example1')">Düzenle</button>
+                        </td>
+                    </tr>
+                    <tr id="example1" style="display:none;">
+                        <td colspan="6">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Örnek Ürün</th>
+                                        <th>İşlem</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Örnek Ürün 1</td>
+                                        <td>
+                                            <button class="btn btn-success btn-sm">Düzenle</button>
+                                            <button class="btn btn-danger btn-sm">Kaldır</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Örnek Ürün 2</td>
+                                        <td>
+                                            <button class="btn btn-success btn-sm">Düzenle</button>
+                                            <button class="btn btn-danger btn-sm">Kaldır</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- Ürün 13: Laptop -->
+                    <tr>
+                        <td class="text-center">
+                            <img src="images/product13.png" alt="Laptop" style="width: 100px; height: auto;" />
+                        </td>
+                        <td>Laptop</td>
+
+                        <td>15</td>
+                        <td>Laptop</td>
+                        <td>
+                            <button class="btn btn-success btn-sm"
+                                onclick="toggleExampleProducts('example1')">Düzenle</button>
+                        </td>
+                    </tr>
+                    <tr id="example1" style="display:none;">
+                        <td colspan="6">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Örnek Ürün</th>
+                                        <th>İşlem</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Örnek Ürün 1</td>
+                                        <td>
+                                            <button class="btn btn-success btn-sm">Düzenle</button>
+                                            <button class="btn btn-danger btn-sm">Kaldır</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Örnek Ürün 2</td>
+                                        <td>
+                                            <button class="btn btn-success btn-sm">Düzenle</button>
+                                            <button class="btn btn-danger btn-sm">Kaldır</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- Ürün 14: Tablet -->
+                    <tr>
+                        <td class="text-center">
+                            <img src="images/product14.png" alt="Tablet" style="width: 100px; height: auto;" />
+                        </td>
+                        <td>Tablet</td>
+
+                        <td>10</td>
+                        <td>Tablet</td>
+                        <td>
+                            <button class="btn btn-success btn-sm"
+                                onclick="toggleExampleProducts('example1')">Düzenle</button>
+                        </td>
+                    </tr>
+                    <tr id="example1" style="display:none;">
+                        <td colspan="6">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Örnek Ürün</th>
+                                        <th>İşlem</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Örnek Ürün 1</td>
+                                        <td>
+                                            <button class="btn btn-success btn-sm">Düzenle</button>
+                                            <button class="btn btn-danger btn-sm">Kaldır</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Örnek Ürün 2</td>
+                                        <td>
+                                            <button class="btn btn-success btn-sm">Düzenle</button>
+                                            <button class="btn btn-danger btn-sm">Kaldır</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- Ürün 15: Ekran Kartı -->
+                    <tr>
+                        <td class="text-center">
+                            <img src="images/product15.png" alt="Ekran Kartı" style="width: 100px; height: auto;" />
+                        </td>
+                        <td>Ekran Kartı</td>
+
+                        <td>25</td>
+                        <td>Bilgisayar Donanımı</td>
+                        <td>
+                            <button class="btn btn-success btn-sm"
+                                onclick="toggleExampleProducts('example1')">Düzenle</button>
+                        </td>
+                    </tr>
+                    <tr id="example1" style="display:none;">
+                        <td colspan="6">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Örnek Ürün</th>
+                                        <th>İşlem</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Örnek Ürün 1</td>
+                                        <td>
+                                            <button class="btn btn-success btn-sm">Düzenle</button>
+                                            <button class="btn btn-danger btn-sm">Kaldır</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Örnek Ürün 2</td>
+                                        <td>
+                                            <button class="btn btn-success btn-sm">Düzenle</button>
+                                            <button class="btn btn-danger btn-sm">Kaldır</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- Ürün 16: Anakart -->
+                    <tr>
+                        <td class="text-center">
+                            <img src="images/product17.png" alt="Anakart" style="width: 100px; height: auto;" />
+                        </td>
+                        <td>Anakart</td>
+
+                        <td>26</td>
+                        <td>Bilgisayar Donanımı</td>
+                        <td>
+                            <button class="btn btn-success btn-sm"
+                                onclick="toggleExampleProducts('example1')">Düzenle</button>
+                        </td>
+                    </tr>
+                    <tr id="example1" style="display:none;">
+                        <td colspan="6">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Örnek Ürün</th>
+                                        <th>İşlem</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Örnek Ürün 1</td>
+                                        <td>
+                                            <button class="btn btn-success btn-sm">Düzenle</button>
+                                            <button class="btn btn-danger btn-sm">Kaldır</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Örnek Ürün 2</td>
+                                        <td>
+                                            <button class="btn btn-success btn-sm">Düzenle</button>
+                                            <button class="btn btn-danger btn-sm">Kaldır</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- Ürün 17: Masaüstü -->
+                    <tr>
+                        <td class="text-center">
+                            <img src="images/product18.png" alt="Masaüstü" style="width: 100px; height: auto;" />
+                        </td>
+                        <td>Masaüstü</td>
+
+                        <td>32</td>
+                        <td>Masaüstü</td>
+                        <td>
+                            <button class="btn btn-success btn-sm"
+                                onclick="toggleExampleProducts('example1')">Düzenle</button>
+                        </td>
+                    </tr>
+                    <tr id="example1" style="display:none;">
+                        <td colspan="6">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Örnek Ürün</th>
+                                        <th>İşlem</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Örnek Ürün 1</td>
+                                        <td>
+                                            <button class="btn btn-success btn-sm">Düzenle</button>
+                                            <button class="btn btn-danger btn-sm">Kaldır</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Örnek Ürün 2</td>
+                                        <td>
+                                            <button class="btn btn-success btn-sm">Düzenle</button>
+                                            <button class="btn btn-danger btn-sm">Kaldır</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+
+
+
+
+
+
+        <div id="adminDuyuruSlider" class="carousel slide" data-bs-ride="carousel" style="margin-top: 50px;">
+            <div class="carousel-inner text-center">
+                <!-- İlk Duyuru -->
+                <div class="carousel-item active">
+                    <div class="p-4"
+                        style="background-color: #f8f9fa; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                        <h3 style="color: #48ca95;">Duyurular</h3>
+                        <p>Yeni ürünler stoklarımızda! Gaming laptoplar özel fiyatlarla satışta.</p>
+                    </div>
+                </div>
+                <!-- İkinci Duyuru -->
+                <div class="carousel-item">
+                    <div class="p-4"
+                        style="background-color: #f8f9fa; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                        <h3 style="color: #48ca95;">Black Friday İndirimi</h3>
+                        <p>Black Friday indirimi yaklaşıyor! Büyük fırsatları kaçırmayın.</p>
+                    </div>
+                </div>
+                <!-- Üçüncü Duyuru -->
+                <div class="carousel-item">
+                    <div class="p-4"
+                        style="background-color: #f8f9fa; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                        <h3 style="color: #48ca95;">Ücretsiz Kurulum</h3>
+                        <p>Mağazalarımızda ücretsiz kurulum kampanyası devam ediyor!</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Kontroller -->
+            <a class="carousel-control-prev" href="#adminDuyuruSlider" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"
+                    style="background-color: #48ca95; border-radius: 50%;"></span>
+                <span class="visually-hidden">Önceki</span>
+            </a>
+            <a class="carousel-control-next" href="#adminDuyuruSlider" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"
+                    style="background-color: #48ca95; border-radius: 50%;"></span>
+                <span class="visually-hidden">Sonraki</span>
+            </a>
+
+            <!-- Ekleyip Kaldırma Butonları -->
+            <div class="mt-3">
+                <button class="btn btn-success btn-sm" onclick="addAnnouncement()">Ekleyin</button>
+                <button class="btn btn-danger btn-sm" onclick="removeAnnouncement()">Kaldırın</button>
+            </div>
+        </div>
+
+
+        <div id="reviews">
+            <h2>Yorumlar</h2>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    Furkan Akçay: Buradan monitör aldım 2 gün önce elime ulaştı güzel paketlenmesi ve hızlı teslimattan dolayı çok memnun kaldım üründe gayet güzel çalışıyor tebrik ediyorum.
+                    <button class="btn btn-warning btn-sm float-end" onclick="censorComment(this)">Sansürle</button>
+                </li>
+                <li class="list-group-item">
+                    Berke Çoban: Hızlı teslimat ve kaliteli ürünler. Teşekkür ederim!
+                    <button class="btn btn-warning btn-sm float-end" onclick="censorComment(this)">Sansürle</button>
+                </li>
+                <li class="list-group-item">
+                    Mehmet Yılmaz: Müşteri hizmetleri çok ilgili. Alışverişim sorunsuz geçti.Herhangi bir sorun yaşamadım herkese tavsiye ederim.
+                    <button class="btn btn-warning btn-sm float-end" onclick="censorComment(this)">Sansürle</button>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <script>
+        // Yeni bir duyuru ekleme işlemi
+        function addAnnouncement() {
+            const newAnnouncement = `
+                <div class="carousel-item">
+                    <div class="p-4" style="background-color: #f8f9fa; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                        <h3 style="color: #48ca95;">Yeni Duyuru</h3>
+                        <p>Yeni duyuru içerikleri buraya eklenecek.</p>
+                    </div>
+                </div>
+            `;
+            document.querySelector('.carousel-inner').insertAdjacentHTML('beforeend', newAnnouncement);
+        }
+
+        // Son duyuruyu kaldırma işlemi
+        function removeAnnouncement() {
+            const carouselItems = document.querySelectorAll('.carousel-item');
+            if (carouselItems.length > 1) {
+                carouselItems[carouselItems.length - 1].remove();
+            } else {
+                alert("En az bir duyuru olmalı.");
+            }
+        }
+    </script>
+
+    <script>
+        function toggleExampleProducts(id) {
+            var exampleRow = document.getElementById(id);
+            if (exampleRow.style.display === "none") {
+                exampleRow.style.display = "table-row";
+            } else {
+                exampleRow.style.display = "none";
+            }
+        }
+    </script>
+</body>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <!-- basic -->
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <!-- mobile metas -->
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+   <!-- site metas -->
+   <title>teknoCenter</title>
+   <link rel="icon" href="images/logoicon.ico" type="image/png" />
+   <meta name="keywords" content="">
+   <meta name="description" content="">
+   <meta name="author" content="">
+   <!-- bootstrap css -->
+   <link rel="stylesheet" href="css/bootstrap.min.css">
+   <!-- style css -->
+   <link rel="stylesheet" href="css/style.css">
+   <!-- Responsive-->
+   <link rel="stylesheet" href="css/responsive.css">
+   <!-- fevicon -->
+   <link rel="icon" href="images/fevicon.png" type="image/gif" />
+   <!-- Scrollbar Custom CSS -->
+   <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+   <!-- Tweaks for older IEs-->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
+      media="screen">
+
+   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+   <style>
+      /* Buton stilleri */
+      .read_more {
+         color: #4CAF50;
+         /* Buton rengi */
+         font-size: 18px;
+         text-decoration: none;
+         display: inline-block;
+         margin-top: 20px;
+         cursor: pointer;
+      }
+
+      /* Ekstra içeriğin stilini belirleyebiliriz */
+      #additionalContent {
+         margin-top: 30px;
+      }
+   </style>
+
+   
+
+</head>
+<!-- body -->
+
+<body class="main-layout inner_posituong computer_page">
+   <!-- loader  -->
+   <div class="loader_bg">
+      <div class="loader"><img src="images/loading.gif" alt="#" /></div>
+   </div>
+   <!-- end loader -->
+   <!-- header -->
+   <header>
+      <!-- header inner -->
+      <div class="header">
+         <div class="container-fluid">
+            <div class="row">
+               <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                  <div class="full">
+                     <div class="center-desk">
+                        <div class="logo">
+                           <a href="index.html"><img src="images/logo.png" alt="#" /></a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                  <nav class="navigation navbar navbar-expand-md navbar-dark">
+                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04"
+                        aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                     </button>
+                     <div class="collapse navbar-collapse" id="navbarsExample04">
+                        <ul class="navbar-nav mr-auto">
+                           <li class="nav-item active">
+                              <a class="nav-link" href="index.html">Anasayfa</a>
+                           </li>
+
+                           <li class="nav-item">
+                              <a class="nav-link" href="product.html">Ürünlerimiz</a>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="about.html">Hakkımızda</a>
+                           </li>
+
+                           <li class="nav-item">
+                              <a class="nav-link cart-link" href="sepet.html">
+                                 <i class="fa-solid fa-bag-shopping"></i>
+                                 <span>Sepet</span>
+                              </a>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link cart-link" href="giris.html">
+                                 <i class="fa fa-sign-in-alt" style="color: white; "></i>
+                                 <span>Giriş</span>
+                              </a>
+                           </li>
+
+                        </ul>
+                     </div>
+                  </nav>
+               </div>
+
+            </div>
+         </div>
+      </div>
+   </header>
+   <!-- end header inner -->
+   <!-- end header -->
+   <!-- about section -->
+
+
+   <div class="about">
+      <div class="container">
+         <div class="row d_flex">
+            <div class="col-md-5">
+               <div class="titlepage">
+                  <h2>Hakkımızda</h2>
+                  <p>Türkiye'nin Bilgisayarcısı teknoCenter olarak Toplama Bilgisayar, Gaming Notebooklar ve Gaming
+                     Ürünlerin perakende satışını gerçekleştirmek amacıyla yenilikçi mağazacılık anlayışı ve gelişmiş
+                     web sitesi özellikleriyle kullanıcılarımıza teknolojik çözümler sunan bir marka olarak yola çıktık.
+                     Türkiye genelinde 100'den fazla mağazamızla bu alanda hizmet vermekte ve büyüme çabasındayız.
+                     Vizyonumuz güvenilirlik ve kalite anlamında bu alanda en üst seviyede kalmak müşterilerimizin
+                     bizden memnun ayrılmalarını sağlamaktır. Bunun için bir ürün alındığında kişi üründen memnun
+                     olmayabilir bunun için tüm ürünlerimiz garanti kapsamı altındadır.</p>
+                  <a class="read_more" href="#" id="toggleButton">Daha Fazla</a>
+               </div>
+
+            </div>
+            <div class="col-md-7">
+               <div class="about_img">
+                  <figure><img src="images/about.jpg" alt="#" /></figure>
+               </div>
+            </div>
+         </div>
+
+         <div id="additionalContent" style="display: none; margin-top: 30px;">
+            <h3>GARANTİ KOŞULLARI</h3>
+            <p>teknoCenter'da garanti koşulları aşağıdaki gibidir:</p>
+            <ul>
+               <li>teknoCenter.com'da satılan tüm ürünler en az 2 yıl olmak üzere üretici ya da distribütör garantisi
+                  altındadır.</li>
+               <li>Ürünün kutu içeriğinde belirtilen aksesuarlar da dahil olmak üzere ürünün tüm parçaları garanti
+                  kapsamındadır.</li>
+               <li>Alıcı tarafından montajı yapılan tavsiye sistemlerde her parça kendi markaları ya da distribütörleri
+                  tarafından garanti kapsamındadır.</li>
+               <li>Ürünlerin garanti kapsamında yapılacak onarım işlemi 20 iş gününü geçemez.</li>
+               <li>Ürünlerin kullanma kılavuzunda yer alan hususlara aykırı kullanılmasından kaynaklanan arızalar
+                  garanti kapsamı dışındadır.</li>
+               <li>Garanti kapsamında değiştirilen ürünün garanti süresi, satın alınan ilk ürünün garanti süresi ile
+                  sınırlıdır.</li>
+               <li>Ürünün garanti süresince arızalanması sonucu serviste geçen süre garanti süresine eklenir.</li>
+               <li>Garanti işlemleri kapsamında yapılacak işlemlerde oluşabilecek veri kaybından garanti servisi
+                  sağlayıcısı sorumlu değildir.</li>
+               <li>Her markanın garanti şartları farklı olabileceğinden mutlaka ürün içerisinden çıkan ya da markaların
+                  resmi web adreslerinde sunulan garanti şartları kılavuzu incelenmelidir.</li>
+               <li>teknoCenter teknik servis hizmeti vermemektedir. Gönderilen tüm ürünler garanti servisini sağlayan
+                  yetkili teknik servislere gönderilir.</li>
+            </ul>
+         </div>
+         <div id="adminDuyuruSlider" class="carousel slide" data-bs-ride="carousel" style="margin-top: 50px;">
+            <div class="carousel-inner text-center">
+               <!-- İlk Duyuru -->
+               <div class="carousel-item active">
+                  <div class="p-4"
+                     style="background-color: #f8f9fa; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                     <h3 style="color: #48ca95;">Duyurular</h3>
+                     <p>Yeni ürünler stoklarımızda! Gaming laptoplar özel fiyatlarla satışta.</p>
+                  </div>
+               </div>
+               <!-- İkinci Duyuru -->
+               <div class="carousel-item">
+                  <div class="p-4"
+                     style="background-color: #f8f9fa; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                     <h3 style="color: #48ca95;">Black Friday İndirimi</h3>
+                     <p>Black Friday indirimi yaklaşıyor! Büyük fırsatları kaçırmayın.</p>
+                  </div>
+               </div>
+               <!-- Üçüncü Duyuru -->
+               <div class="carousel-item">
+                  <div class="p-4"
+                     style="background-color: #f8f9fa; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                     <h3 style="color: #48ca95;">Ücretsiz Kurulum</h3>
+                     <p>Mağazalarımızda ücretsiz kurulum kampanyası devam ediyor!</p>
+                  </div>
+               </div>
+            </div>
+            <!-- Kontroller -->
+            <a class="carousel-control-prev" href="#adminDuyuruSlider" role="button" data-bs-slide="prev">
+               <span class="carousel-control-prev-icon" aria-hidden="true"
+                  style="background-color: #48ca95; border-radius: 50%;"></span>
+               <span class="visually-hidden">Önceki</span>
+            </a>
+            <a class="carousel-control-next" href="#adminDuyuruSlider" role="button" data-bs-slide="next">
+               <span class="carousel-control-next-icon" aria-hidden="true"
+                  style="background-color: #48ca95; border-radius: 50%;"></span>
+               <span class="visually-hidden">Sonraki</span>
+            </a>
+         </div>
+
+      </div>
+   </div>
+
+   <!-- end about section -->
+   <!--  footer -->
+   <footer>
+      <div class="footer">
+         <div class="container">
+            <div class="row">
+               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                  <img class="logo1" src="images/logo.png" alt="Logo" />
+                  <ul class="social_icon">
+                     <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                     <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                     <li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                     <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                  </ul>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                  <h3>Bağlantılar</h3>
+                  <ul class="about_us">
+                     <li>
+                        <i class="fas fa-link link-icon"></i>
+                        <a href="about.html">Hakkımızda</a>
+                     </li>
+                     <li>
+                        <i class="fas fa-link link-icon"></i>
+                        <a href="about.html">İptal ve İade Koşulları</a>
+                     </li>
+                     <li>
+                        <i class="fas fa-link link-icon"></i>
+                        <a href="index.html">Hafta Fırsatları</a>
+                     </li>
+                     <li>
+                        <i class="fas fa-link link-icon"></i>
+                        <a href="index.html">Müşteri İncelemesi</a>
+                     </li>
+                  </ul>
+               </div>
+
+               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                  <h3>Bize Ulaşın</h3>
+                  <ul class="conta">
+                     <li><i class="fas fa-map-marker-alt location-icon"></i> Adres:Örnek Mah.Teknoloji Cad. No:42</li>
+                     <li><i class="fa-solid fa-phone phone-icon"></i> Telefon: +90 555 123 45 67 Çağrı Merkezimize hafta
+                        içi her gün
+                        sabah 9:00 ila akşam 18:00 arası ulaşabilirsiniz</li>
+                     <li><i class="fa-regular fa-envelope email-icon"></i>Mail: info@teknoCenter.com</li>
+                     <li><i class="fas fa-clock work-icon"></i> Çalışma Saatleri: 09:00 - 18:00</li>
+                  </ul>
+               </div>
+
+            </div>
+         </div>
+         <div class="copyright">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-12">
+                     <p>© 2019 Tüm Hakları Saklıdır.Dizayn:<a href="https://html.design/"> Ücretsiz HTML Şablonu</a>
+                        tarafından sağlanmıştır.</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </footer>
+   <!-- end footer -->
+   <!-- Javascript files-->
+   <script>
+      // "Daha Fazla" butonuna tıklandığında içeriği gösteren fonksiyon
+      document.getElementById("toggleButton").addEventListener("click", function (e) {
+         e.preventDefault(); // Sayfanın yenilenmesini engeller
+         var additionalContent = document.getElementById("additionalContent");
+
+         // İçeriği göster veya gizle
+         if (additionalContent.style.display === "none") {
+            additionalContent.style.display = "block"; // Göster
+            this.innerText = "Daha Az"; // Buton metnini değiştir
+         } else {
+            additionalContent.style.display = "none"; // Gizle
+            this.innerText = "Daha Fazla"; // Buton metnini geri değiştir
+         }
+      });
+
+      function scrollToSection(sectionId) {
+         var element = document.getElementById(sectionId);
+         if (element) {
+            element.scrollIntoView({
+               behavior: 'smooth'
+            });
+         }
+      }
+
+
+
+   </script>
+
+
+   <script src="js/jquery.min.js"></script>
+   <script src="js/popper.min.js"></script>
+   <script src="js/bootstrap.bundle.min.js"></script>
+   <script src="js/jquery-3.0.0.min.js"></script>
+   <!-- sidebar -->
+   <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+   <script src="js/custom.js"></script>
+</body>
+
+</html>
